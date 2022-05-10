@@ -565,7 +565,7 @@
   dependencies:
     npm-run-all "^4.1.5"
 
-"@twilio/voice-sdk@^2.0.1":
+"@twilio/voice-sdk@^2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@twilio/voice-sdk/-/voice-sdk-2.1.1.tgz#b21fcbfc403aaa3625d626f66fd07540f9ca056a"
   integrity sha512-k96NDlqp5k4thf5a3o5RqzWAGmkd3H/RMl8KSD0ChdQX0QuAW025p7we+QHyhLCkqG5MRGSBMy5FdQtvj/DOog==
