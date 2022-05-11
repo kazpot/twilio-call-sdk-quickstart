@@ -226,6 +226,7 @@
     incomingCallRejectButton.classList.remove("hide");
     incomingCallHangupButton.classList.add("hide");
     incomingCallDiv.classList.add("hide");
+    startupClient();
   }
 
   // AUDIO CONTROLS

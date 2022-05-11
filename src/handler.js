@@ -6,10 +6,12 @@ const nameGenerator = require('../name_generator');
 const config = require('../config');
 
 // eslint-disable-next-line no-var
-var identity;
+const identities = [];
 
 exports.tokenGenerator = function tokenGenerator() {
   identity = nameGenerator();
+  identities.push(identity);
+  console.log(identities);
 
   const accessToken = new AccessToken(
       config.accountSid,
@@ -41,7 +43,18 @@ exports.voiceResponse = function voiceResponse(requestBody) {
     const dial = twiml.dial();
 
     // This will connect the caller with your Twilio.Device/client
-    dial.client(identity);
+    if (identities.length == 0) {
+      twiml.say('Sorry we are busy!');
+      return twiml.toString();
+    }
+    dial.client(identities[0]);
+
+    // pop the first element
+    const index = identities.indexOf(identities[0]);
+    if (index > -1) {
+      identities.splice(index, 1);
+    }
+    console.log(identities);
   } else if (requestBody.To) {
     // This is an outgoing call
 
